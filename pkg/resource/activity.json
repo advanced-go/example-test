@@ -1,0 +1,24 @@
+[
+  {
+    "ActivityID": "123456",
+    "ActivityType": "action",
+    "Agent": "Controller",
+    "AgentUri": "https://somehost.com/id",
+    "Assignment": "case#",
+    "FrameUri": "https://framehost.com/frame-id",
+    "Controller": "egress",
+    "Behavior": "timeout",
+    "Description": "decreased timeout"
+  },
+  {
+    "ActivityID": "101010",
+    "ActivityType": "trace",
+    "Agent": "Controller2",
+    "AgentUri": "https://somehost.com/id2",
+    "Assignment": "case#5",
+    "FrameUri": "https://framehost.com/frame-id2",
+    "Controller": "",
+    "Behavior": "",
+    "Description": "created action"
+  }
+]

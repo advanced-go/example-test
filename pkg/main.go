@@ -3,9 +3,8 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/go-ai-agent/core/exchange"
-	"github.com/go-ai-agent/core/httpx"
-	"github.com/go-ai-agent/core/runtime"
+	"github.com/go-ai-agent/core/http2"
+	"github.com/go-ai-agent/core/io2"
 	"net/http"
 	"net/url"
 )
@@ -32,7 +31,7 @@ func main() {
 
 func Put(file, uri string) {
 	u, _ := url.Parse(file)
-	buf, err := httpx.ReadFile(u)
+	buf, err := io2.ReadFile(u)
 	if err != nil {
 		fmt.Printf("read file err: %v\n", err)
 		return
@@ -43,7 +42,7 @@ func Put(file, uri string) {
 		fmt.Printf("new request err: %v\n", err1)
 		return
 	}
-	resp, _ := exchange.Do[runtime.DebugError](req)
+	resp, _ := http2.Do(req)
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
 	}
@@ -55,7 +54,7 @@ func Delete(uri string) {
 		fmt.Printf("new request err: %v\n", err1)
 		return
 	}
-	resp, _ := exchange.Do[runtime.DebugError](req)
+	resp, _ := http2.Do(req)
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
 	}

@@ -2,12 +2,6 @@
   {
     "Traffic":     "ingress",
     "Duration":    400,
-    "Controller":  "host-400",
-    "Region":      "usa",
-    "Zone":        "west",
-    "SubZone":     "",
-    "Service":     "access-log",
-    "InstanceId":  "123-456-789",
     "RequestId":   "request-id-1",
     "Url":         "https://access-log.com/example-domain/timeseries/entry",
     "Route":       "primary",
@@ -19,18 +13,11 @@
     "StatusFlags": "",
     "Timeout":     500,
     "RateLimit":   500,
-    "RateBurst":   100,
-    "RoutePct":    0
+    "RateBurst":   100
   },
   {
     "Traffic":     "ingress",
     "Duration":    500,
-    "Controller":  "host-500",
-    "Region":      "usa",
-    "Zone":        "west",
-    "SubZone":     "",
-    "Service":     "access-log",
-    "InstanceId":  "123-456-789",
     "RequestId":   "request-id-1",
     "Url":         "https://access-log.com/example-domain/timeseries/entry",
     "Route":       "primary",
@@ -42,21 +29,13 @@
     "StatusFlags": "",
     "Timeout":     500,
     "RateLimit":   500,
-    "RateBurst":   100,
-    "RoutePct":    0
+    "RateBurst":   100
   },
   {
     "Traffic":     "ingress",
     "Duration":    600,
-    "Controller":  "host-600",
-    "Region":      "usa",
-    "Zone":        "west",
-    "SubZone":     "",
-    "Service":     "access-log",
-    "InstanceId":  "123-456-789",
     "RequestId":   "request-id-1",
     "Url":         "https://access-log.com/example-domain/timeseries/entry",
-    "Route":       "primary",
     "Protocol":    "http",
     "Host":        "access-log.com",
     "Path":        "/example-domain/timeseries/entry",
@@ -65,21 +44,13 @@
     "StatusFlags": "",
     "Timeout":     500,
     "RateLimit":   500,
-    "RateBurst":   100,
-    "RoutePct":    0
+    "RateBurst":   100
   },
   {
     "Traffic":     "ingress",
     "Duration":    700,
-    "Controller":  "host-700",
-    "Region":      "usa",
-    "Zone":        "west",
-    "SubZone":     "",
-    "Service":     "access-log",
-    "InstanceId":  "123-456-789",
     "RequestId":   "request-id-1",
     "Url":         "https://access-log.com/example-domain/timeseries/entry",
-    "Route":       "primary",
     "Protocol":    "http",
     "Host":        "access-log.com",
     "Path":        "/example-domain/timeseries/entry",
@@ -88,21 +59,13 @@
     "StatusFlags": "",
     "Timeout":     500,
     "RateLimit":   500,
-    "RateBurst":   100,
-    "RoutePct":    0
+    "RateBurst":   100
   },
   {
     "Traffic":     "ingress",
     "Duration":    800,
-    "Controller":  "host-800",
-    "Region":      "usa",
-    "Zone":        "west",
-    "SubZone":     "",
-    "Service":     "access-log",
-    "InstanceId":  "123-456-789",
     "RequestId":   "request-id-1",
     "Url":         "https://access-log.com/example-domain/timeseries/entry",
-    "Route":       "primary",
     "Protocol":    "http",
     "Host":        "access-log.com",
     "Path":        "/example-domain/timeseries/entry",
@@ -111,21 +74,13 @@
     "StatusFlags": "",
     "Timeout":     500,
     "RateLimit":   500,
-    "RateBurst":   100,
-    "RoutePct":    0
+    "RateBurst":   100
   },
   {
     "Traffic":     "ingress",
     "Duration":    900,
-    "Controller":  "host-900",
-    "Region":      "usa",
-    "Zone":        "west",
-    "SubZone":     "",
-    "Service":     "access-log",
-    "InstanceId":  "123-456-789",
     "RequestId":   "request-id-1",
     "Url":         "https://access-log.com/example-domain/timeseries/entry",
-    "Route":       "primary",
     "Protocol":    "http",
     "Host":        "access-log.com",
     "Path":        "/example-domain/timeseries/entry",
@@ -134,21 +89,13 @@
     "StatusFlags": "",
     "Timeout":     500,
     "RateLimit":   500,
-    "RateBurst":   100,
-    "RoutePct":    0
+    "RateBurst":   100
   },
   {
     "Traffic":     "egress",
     "Duration":    1000,
-    "Controller":  "egress-update",
-    "Region":      "usa",
-    "Zone":        "east",
-    "SubZone":     "",
-    "Service":     "access-log",
-    "InstanceId":  "789-012-345",
     "RequestId":   "request-id-2",
     "Url":         "https://access-log.com/example-domain/timeseries/entry",
-    "Route":       "primary",
     "Protocol":    "http",
     "Host":        "access-log.com",
     "Path":        "/example-domain/timeseries/entry",
@@ -157,7 +104,6 @@
     "StatusFlags": "",
     "Timeout":     400,
     "RateLimit":   400,
-    "RateBurst":   50,
-    "RoutePct":    0
+    "RateBurst":   50
   }
 ]

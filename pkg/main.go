@@ -14,22 +14,27 @@ const (
 	SloUrl        = "http://localhost:8080/go-ai-agent/example-domain/slo/entry"
 	TimeseriesUrl = "http://localhost:8080/go-ai-agent/example-domain/timeseries/entry"
 
-	ActivityResource   = "file://[cwd]/pkg/resource/activity.json"
-	SloResource        = "file://[cwd]/pkg/resource/slo.json"
-	TimeseriesResource = "file://[cwd]/pkg/resource/timeseries.json"
+	ActivityResource     = "file://[cwd]/pkg/resource/activity.json"
+	SloResource          = "file://[cwd]/pkg/resource/slo.json"
+	TimeseriesResourceV1 = "file://[cwd]/pkg/resource/timeseries-v1.json"
+	TimeseriesResourceV2 = "file://[cwd]/pkg/resource/timeseries-v2.json"
+
+	EntryV1Variant = "github.com/go-ai-agent/example-domain/timeseries/EntryV1"
+	EntryV2Variant = "github.com/go-ai-agent/example-domain/timeseries/EntryV2"
 )
 
 func main() {
-	Put(ActivityResource, ActivityUrl)
-	Put(SloResource, SloUrl)
-	Put(TimeseriesResource, TimeseriesUrl)
+	Put(ActivityResource, ActivityUrl, "")
+	Put(SloResource, SloUrl, "")
+	Put(TimeseriesResourceV1, TimeseriesUrl, EntryV1Variant)
+	Put(TimeseriesResourceV2, TimeseriesUrl, EntryV2Variant)
 
 	//Delete(ActivityUrl)
 	//Delete(SloUrl)
 	//Delete(TimeseriesUrl)
 }
 
-func Put(file, uri string) {
+func Put(file, uri, variant string) {
 	u, _ := url.Parse(file)
 	buf, err := io2.ReadFile(u)
 	if err != nil {
@@ -42,17 +47,23 @@ func Put(file, uri string) {
 		fmt.Printf("new request err: %v\n", err1)
 		return
 	}
+	if len(variant) > 0 {
+		req.Header.Add(http2.ContentLocation, variant)
+	}
 	resp, _ := http2.Do(req)
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
 	}
 }
 
-func Delete(uri string) {
+func Delete(uri, variant string) {
 	req, err1 := http.NewRequest(http.MethodDelete, uri, nil)
 	if err1 != nil {
 		fmt.Printf("new request err: %v\n", err1)
 		return
+	}
+	if len(variant) > 0 {
+		req.Header.Add(http2.ContentLocation, variant)
 	}
 	resp, _ := http2.Do(req)
 	if resp != nil {

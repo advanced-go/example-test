@@ -1,7 +1,13 @@
+github.com/felixge/httpsnoop v1.0.4 h1:NFTV2Zj1bL4mc9sqWACXbQFVBBg2W3GPvqp8/ESS2Wg=
+github.com/felixge/httpsnoop v1.0.4/go.mod h1:m8KPJKqk1gH5J9DgRY2ASl2lWCfGKXixSwevea8zH2U=
 github.com/go-ai-agent/core v0.0.0-20231025173212-6a5a91216f45 h1:T+DGBybZacE5Pk802Mehbybr/kVyJE4n3dl6EaYy6l4=
 github.com/go-ai-agent/core v0.0.0-20231025173212-6a5a91216f45/go.mod h1:eJTo4x8bOsmTTlhCB7maKxD5SNAIHaYqSe+r6aoXONM=
 github.com/go-ai-agent/core v0.0.0-20231110161306-908353af223e h1:MATEo3Evbckwd2DQgIINDIssUYNwxQZ7UNNR3TzPTLU=
 github.com/go-ai-agent/core v0.0.0-20231110161306-908353af223e/go.mod h1:7ReZEgt5wnossL/Rcx47VnXmRsmHOOK6WzCeDs4cEQI=
+github.com/go-ai-agent/core v0.0.0-20231112090009-e49600364228 h1:x3mfePgVEefcq9C9NWDsoDjE/LlB3HOO0f6uG3LUoSY=
+github.com/go-ai-agent/core v0.0.0-20231112090009-e49600364228/go.mod h1:7ReZEgt5wnossL/Rcx47VnXmRsmHOOK6WzCeDs4cEQI=
+github.com/go-ai-agent/example-domain v0.0.0-20231112152658-5f2012178e87 h1:vez29vIg4IVeZEQ2R1yBWWj1+IeOq5cQwq8aau44e4U=
+github.com/go-ai-agent/example-domain v0.0.0-20231112152658-5f2012178e87/go.mod h1:0g8udblkYVSzMZjVHL+zxEKCgo0qjenNOOsPRfU5K6M=
 github.com/golang/protobuf v1.5.0/go.mod h1:FsONVRAS9T7sI+LIUmWTfcYkHO4aIWwzhcaSAoJOfIk=
 github.com/golang/protobuf v1.5.3 h1:KhyjKVUg7Usr/dYsdSqoFveMYd5ko72D+zANwlG1mmg=
 github.com/golang/protobuf v1.5.3/go.mod h1:XVQd3VNwM+JqD3oG2Ue2ip4fOMUkwXdXDdiuN0vRsmY=

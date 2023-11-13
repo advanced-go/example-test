@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/go-ai-agent/core/http2"
 	"github.com/go-ai-agent/core/io2"
+	"github.com/go-ai-agent/example-domain/slo"
 	"net/http"
 	"net/url"
 )
@@ -24,14 +25,42 @@ const (
 )
 
 func main() {
+	//testInitialLoad()
+	testAgent_Load()
+	//Delete(ActivityUrl)
+	//Delete(SloUrl)
+	//Delete(TimeseriesUrl)
+}
+
+func testInitialLoad() {
 	Put(ActivityResource, ActivityUrl, "")
 	Put(SloResource, SloUrl, "")
 	Put(TimeseriesResourceV1, TimeseriesUrl, EntryV1Variant)
 	Put(TimeseriesResourceV2, TimeseriesUrl, EntryV2Variant)
 
-	//Delete(ActivityUrl)
-	//Delete(SloUrl)
-	//Delete(TimeseriesUrl)
+}
+
+func testAgent_Load() {
+	Put(SloResource, SloUrl, "")
+	Put(TimeseriesResourceV2, TimeseriesUrl, EntryV2Variant)
+}
+
+func testAgent_AddSLO(slo slo.EntryV1) {
+	req, err1 := http.NewRequest(http.MethodPut, uri, reader)
+	if err1 != nil {
+		fmt.Printf("new request err: %v\n", err1)
+		return
+	}
+	if len(variant) > 0 {
+		req.Header.Add(http2.ContentLocation, variant)
+	}
+	resp, _ := http2.Do(req)
+	if resp != nil {
+		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
+	}
+
+	Put(SloResource, SloUrl, "")
+
 }
 
 func Put(file, uri, variant string) {

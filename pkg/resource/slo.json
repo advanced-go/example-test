@@ -6,7 +6,7 @@
   },
   {
     "Controller": "egress",
-    "Threshold": "88.8/1000ms",
+    "Threshold": "88.8/900ms",
     "StatusCodes": "500,504"
   }
 ]

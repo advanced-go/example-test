@@ -25,8 +25,8 @@ const (
 )
 
 func main() {
-	//testInitialLoad()
-	testAgent_Load()
+	testInitialLoad()
+	//testAgent_Load()
 	//Delete(ActivityUrl)
 	//Delete(SloUrl)
 	//Delete(TimeseriesUrl)
@@ -46,7 +46,8 @@ func testAgent_Load() {
 }
 
 func testAgent_AddSLO(slo slo.EntryV1) {
-	req, err1 := http.NewRequest(http.MethodPut, uri, reader)
+	variant := ""
+	req, err1 := http.NewRequest(http.MethodPut, SloUrl, nil)
 	if err1 != nil {
 		fmt.Printf("new request err: %v\n", err1)
 		return
@@ -79,10 +80,11 @@ func Put(file, uri, variant string) {
 	if len(variant) > 0 {
 		req.Header.Add(http2.ContentLocation, variant)
 	}
-	resp, _ := http2.Do(req)
+	resp, status := http2.Do(req)
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
 	}
+	fmt.Printf("Put() [status:%v]\n", status)
 }
 
 func Delete(uri, variant string) {

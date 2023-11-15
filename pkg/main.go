@@ -3,25 +3,25 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/go-ai-agent/core/http2"
-	"github.com/go-ai-agent/core/io2"
-	"github.com/go-ai-agent/example-domain/slo"
+	"github.com/advanced-go/core/http2"
+	"github.com/advanced-go/core/io2"
+	"github.com/advanced-go/example-domain/slo"
 	"net/http"
 	"net/url"
 )
 
 const (
-	ActivityUrl   = "http://localhost:8080/go-ai-agent/example-domain/activity/entry"
-	SloUrl        = "http://localhost:8080/go-ai-agent/example-domain/slo/entry"
-	TimeseriesUrl = "http://localhost:8080/go-ai-agent/example-domain/timeseries/entry"
+	ActivityUrl   = "http://localhost:8080/advanced-go/example-domain/activity/entry"
+	SloUrl        = "http://localhost:8080/advanced-go/example-domain/slo/entry"
+	TimeseriesUrl = "http://localhost:8080/advanced-go/example-domain/timeseries/entry"
 
 	ActivityResource     = "file://[cwd]/pkg/resource/activity.json"
 	SloResource          = "file://[cwd]/pkg/resource/slo.json"
 	TimeseriesResourceV1 = "file://[cwd]/pkg/resource/timeseries-v1.json"
 	TimeseriesResourceV2 = "file://[cwd]/pkg/resource/timeseries-v2.json"
 
-	EntryV1Variant = "github.com/go-ai-agent/example-domain/timeseries/EntryV1"
-	EntryV2Variant = "github.com/go-ai-agent/example-domain/timeseries/EntryV2"
+	EntryV1Variant = "github.com/advanced-go/example-domain/timeseries/EntryV1"
+	EntryV2Variant = "github.com/advanced-go/example-domain/timeseries/EntryV2"
 )
 
 func main() {
@@ -45,7 +45,7 @@ func testAgent_Load() {
 	Put(TimeseriesResourceV2, TimeseriesUrl, EntryV2Variant)
 }
 
-func testAgent_AddSLO(slo slo.EntryV1) {
+func testAgent_AddSLO(s slo.EntryV1) {
 	variant := ""
 	req, err1 := http.NewRequest(http.MethodPut, SloUrl, nil)
 	if err1 != nil {

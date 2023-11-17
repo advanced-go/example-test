@@ -41,14 +41,14 @@ func testInitialLoad() {
 
 }
 
-func testAgent_Load() bool {
+func testAgentLoad() bool {
 	if !Put(SloResource, SloUrl, slo.EntryV1Variant) {
 		return false
 	}
 	return Put(TimeseriesResourceV2, TimeseriesUrl, timeseries.EntryV2Variant)
 }
 
-func testAgent_AddSLO(s slo.EntryV1) bool {
+func testAgentAddSLO(s slo.EntryV1) bool {
 	buf, status := json2.Marshal(s)
 	if !status.OK() {
 		fmt.Printf("error: AddSLO() -> %v", status.FirstError())

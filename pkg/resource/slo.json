@@ -1,12 +1,14 @@
 [
   {
+    "Id": "100",
     "Controller": "host",
-    "Threshold": "99.9/800ms",
+    "Threshold": "99.9/501ms",
     "StatusCodes": "0"
   },
   {
+    "Id": "102",
     "Controller": "egress",
-    "Threshold": "88.8/900ms",
+    "Threshold": "88.8/601ms",
     "StatusCodes": "500,504"
   }
 ]

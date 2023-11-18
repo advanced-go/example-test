@@ -26,8 +26,14 @@ const (
 )
 
 func main() {
-	testInitialLoad()
-	//testAgent_Load()
+	//testInitialLoad()
+	testAgentLoad()
+
+	//testAgentAddSLO("103","host","99.9/701ms")
+	//testAgentAddSLO("104","host","99.9/801ms")
+	//testAgentAddSLO("105","host","99.9/901ms")
+	//testAgentAddSLO("106","host","99.9/1001ms")
+
 	//Delete(ActivityUrl)
 	//Delete(SloUrl)
 	//Delete(TimeseriesUrl)
@@ -48,8 +54,15 @@ func testAgentLoad() bool {
 	return Put(TimeseriesResourceV2, TimeseriesUrl, timeseries.EntryV2Variant)
 }
 
-func testAgentAddSLO(s slo.EntryV1) bool {
-	buf, status := json2.Marshal(s)
+func testAgentAddSLO(id, controller, threshold string) bool {
+	entries := []slo.EntryV1{{
+		Id:          id,
+		Controller:  controller,
+		Threshold:   threshold,
+		StatusCodes: "0",
+	},
+	}
+	buf, status := json2.Marshal(entries)
 	if !status.OK() {
 		fmt.Printf("error: AddSLO() -> %v", status.FirstError())
 		return false

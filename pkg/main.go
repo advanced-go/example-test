@@ -15,9 +15,9 @@ import (
 )
 
 const (
-	ActivityUrl   = "http://localhost:8080/advanced-go/example-domain/activity/entry"
-	SloUrl        = "http://localhost:8080/advanced-go/example-domain/slo/entry"
-	TimeseriesUrl = "http://localhost:8080/advanced-go/example-domain/timeseries/entry"
+	ActivityUrl   = "http://localhost:8080/github.com/advanced-go/example-domain/activity/entry"
+	SloUrl        = "http://localhost:8080/github.com/advanced-go/example-domain/slo/entry"
+	TimeseriesUrl = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries/entry"
 
 	ActivityResource     = "file://[cwd]/pkg/resource/activity.json"
 	SloResource          = "file://[cwd]/pkg/resource/slo.json"
@@ -30,7 +30,7 @@ func main() {
 	//testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
-	//testAgentAddSLO("104", "host", "99.9/801ms")
+	testAgentAddSLO("104", "host", "99.9/801ms")
 	//testAgentAddSLO("105", "host", "99.9/901ms")
 	//testAgentAddSLO("106", "host", "99.9/1001ms")
 

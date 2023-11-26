@@ -6,7 +6,6 @@ import (
 	"github.com/advanced-go/core/http2"
 	"github.com/advanced-go/core/io2"
 	"github.com/advanced-go/core/json2"
-	"github.com/advanced-go/example-domain/activity"
 	"github.com/advanced-go/example-domain/slo"
 	"github.com/advanced-go/example-domain/timeseries"
 	"io"
@@ -15,9 +14,10 @@ import (
 )
 
 const (
-	ActivityUrl   = "http://localhost:8080/github.com/advanced-go/example-domain/activity/entry"
-	SloUrl        = "http://localhost:8080/github.com/advanced-go/example-domain/slo/entry"
-	TimeseriesUrl = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries/entry"
+	ActivityUrl    = "http://localhost:8080/github.com/advanced-go/example-domain/activity:entry"
+	SloUrl         = "http://localhost:8080/github.com/advanced-go/example-domain/slo:entry"
+	TimeseriesUrl  = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries"
+	Timeseries2Url = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries2:entry"
 
 	ActivityResource     = "file://[cwd]/pkg/resource/activity.json"
 	SloResource          = "file://[cwd]/pkg/resource/slo.json"
@@ -30,8 +30,8 @@ func main() {
 	//testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
-	testAgentAddSLO("104", "host", "99.9/801ms")
-	//testAgentAddSLO("105", "host", "99.9/901ms")
+	//testAgentAddSLO("104", "host", "99.9/801ms")
+	testAgentAddSLO("105", "host", "99.9/901ms")
 	//testAgentAddSLO("106", "host", "99.9/1001ms")
 
 	//Delete(ActivityUrl)
@@ -40,22 +40,22 @@ func main() {
 }
 
 func testInitialLoad() {
-	Put(ActivityResource, ActivityUrl, activity.EntryV1Variant)
-	Put(SloResource, SloUrl, slo.EntryV1Variant)
+	Put(ActivityResource, ActivityUrl, "")
+	Put(SloResource, SloUrl, "")
 	Put(TimeseriesResourceV1, TimeseriesUrl, timeseries.EntryV1Variant)
 	Put(TimeseriesResourceV2, TimeseriesUrl, timeseries.EntryV2Variant)
 
 }
 
 func testAgentLoad() bool {
-	if !Put(SloResource, SloUrl, slo.EntryV1Variant) {
+	if !Put(SloResource, SloUrl, "") {
 		return false
 	}
-	return Put(TimeseriesResourceV2, TimeseriesUrl, timeseries.EntryV2Variant)
+	return Put(TimeseriesResourceV2, Timeseries2Url, timeseries.EntryV2Variant)
 }
 
 func testAgentAddSLO(id, controller, threshold string) bool {
-	entries := []slo.EntryV1{{
+	entries := []slo.Entry{{
 		Id:          id,
 		Controller:  controller,
 		Threshold:   threshold,
@@ -73,7 +73,7 @@ func testAgentAddSLO(id, controller, threshold string) bool {
 		fmt.Printf("new request err: %v\n", err1)
 		return false
 	}
-	req.Header.Add(http2.ContentLocation, slo.EntryV1Variant)
+	//req.Header.Add(http2.ContentLocation, slo.EntryV1Variant)
 	resp, _ := http2.Do(req)
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)

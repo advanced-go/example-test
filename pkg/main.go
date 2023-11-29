@@ -7,7 +7,6 @@ import (
 	"github.com/advanced-go/core/io2"
 	"github.com/advanced-go/core/json2"
 	"github.com/advanced-go/example-domain/slo"
-	"github.com/advanced-go/example-domain/timeseriesvar"
 	"io"
 	"net/http"
 	"net/url"
@@ -16,7 +15,7 @@ import (
 const (
 	ActivityUrl    = "http://localhost:8080/github.com/advanced-go/example-domain/activity:entry"
 	SloUrl         = "http://localhost:8080/github.com/advanced-go/example-domain/slo:entry"
-	TimeseriesUrl  = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries"
+	Timeseries1Url = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries:v1/entry"
 	Timeseries2Url = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries:v2/entry"
 
 	ActivityResource     = "file://[cwd]/pkg/resource/activity.json"
@@ -26,8 +25,8 @@ const (
 )
 
 func main() {
-	//testInitialLoad()
-	testAgentLoad()
+	testInitialLoad()
+	//testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
 	//testAgentAddSLO("104", "host", "99.9/801ms")
@@ -42,8 +41,8 @@ func main() {
 func testInitialLoad() {
 	Put(ActivityResource, ActivityUrl, "")
 	Put(SloResource, SloUrl, "")
-	Put(TimeseriesResourceV1, TimeseriesUrl, timeseriesvar.EntryV1Variant)
-	Put(TimeseriesResourceV2, TimeseriesUrl, timeseriesvar.EntryV2Variant)
+	Put(TimeseriesResourceV1, Timeseries1Url, "")
+	Put(TimeseriesResourceV2, Timeseries2Url, "") //timeseriesvar.EntryV2Variant)
 
 }
 

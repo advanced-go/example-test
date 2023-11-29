@@ -1,0 +1,41 @@
+[
+  {
+    "traffic":     "ingress",
+    "duration-ms":    800,
+    "request-id":   "request-id-1",
+    "url":         "https://access-log.com/example-domain/timeseries/entry",
+    "protocol":    "http",
+    "host":        "access-log.com",
+    "path":        "/example-domain/timeseries/entry",
+    "method":      "GET",
+    "status-code":  200,
+    "threshold-flags": "",
+    "threshold": -1
+  },
+  {
+    "traffic":     "ingress",
+    "duration-ms":    900,
+    "request-id":   "request-id-2",
+    "url":         "https://access-log.com/example-domain/timeseries/entry",
+    "protocol":    "http",
+    "host":        "access-log.com",
+    "path":        "/example-domain/timeseries/entry",
+    "method":      "GET",
+    "status-code":  200,
+    "threshold-flags": "",
+    "threshold": -1
+  },
+  {
+    "traffic":     "egress",
+    "duration-ms":    1000,
+    "request-id":   "request-id-3",
+    "url":         "https://access-log.com/example-domain/timeseries/entry",
+    "protocol":    "http",
+    "host":        "access-log.com",
+    "path":        "/example-domain/timeseries/entry",
+    "method":      "PUT",
+    "status-code":  202,
+    "threshold-flags": "",
+    "threshold": -1
+  }
+]

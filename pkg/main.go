@@ -21,15 +21,16 @@ const (
 	ActivityResource     = "file://[cwd]/pkg/resource/activity.json"
 	SloResource          = "file://[cwd]/pkg/resource/slo.json"
 	TimeseriesResourceV1 = "file://[cwd]/pkg/resource/timeseries-v1.json"
-	TimeseriesResourceV2 = "file://[cwd]/pkg/resource/timeseries-v2.json"
+	//TimeseriesResourceV2 = "file://[cwd]/pkg/resource/timeseries-v2.json"
+	TimeseriesResourceV2 = "file://[cwd]/pkg/resource/timeseries-v2-annotated.json"
 )
 
 func main() {
-	testInitialLoad()
+	//testInitialLoad()
 	//testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
-	//testAgentAddSLO("104", "host", "99.9/801ms")
+	testAgentAddSLO("104", "host", "99.9/801ms")
 	//testAgentAddSLO("105", "host", "99.9/901ms")
 	//testAgentAddSLO("106", "host", "99.9/1001ms")
 

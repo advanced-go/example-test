@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/advanced-go/core/http2"
+	"github.com/advanced-go/core/exchange"
 	"github.com/advanced-go/core/io2"
 	"github.com/advanced-go/core/json2"
 	"github.com/advanced-go/example-domain/slo"
@@ -27,7 +27,7 @@ const (
 
 func main() {
 	//testInitialLoad()
-	testAgentLoad()
+	//testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
 	//testAgentAddSLO("104", "host", "99.9/801ms")
@@ -73,8 +73,7 @@ func testAgentAddSLO(id, controller, threshold string) bool {
 		fmt.Printf("new request err: %v\n", err1)
 		return false
 	}
-	//req.Header.Add(http2.ContentLocation, slo.EntryV1Variant)
-	resp, _ := http2.Do(req)
+	resp, _ := exchange.Do(req)
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
 	}
@@ -94,8 +93,7 @@ func Put(file, uri, variant string) bool {
 		fmt.Printf("new request err: %v\n", err1)
 		return false
 	}
-	req.Header.Add(http2.ContentLocation, variant)
-	resp, status := http2.Do(req)
+	resp, status := exchange.Do(req)
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
 	}
@@ -109,8 +107,7 @@ func Delete(uri, variant string) {
 		fmt.Printf("new request err: %v\n", err1)
 		return
 	}
-	req.Header.Add(http2.ContentLocation, variant)
-	resp, _ := http2.Do(req)
+	resp, _ := exchange.Do(req)
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
 	}

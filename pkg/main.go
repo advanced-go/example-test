@@ -27,7 +27,7 @@ const (
 
 func main() {
 	//testInitialLoad()
-	//testAgentLoad()
+	testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
 	//testAgentAddSLO("104", "host", "99.9/801ms")

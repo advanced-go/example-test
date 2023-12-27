@@ -27,10 +27,10 @@ const (
 
 func main() {
 	//testInitialLoad()
-	testAgentLoad()
+	//testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
-	//testAgentAddSLO("104", "host", "99.9/801ms")
+	testAgentAddSLO("104", "host", "99.9/801ms")
 	//testAgentAddSLO("105", "host", "99.9/901ms")
 	//testAgentAddSLO("106", "host", "99.9/1001ms")
 

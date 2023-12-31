@@ -3,12 +3,8 @@ module github.com/advanced-go/example-test
 go 1.21.4
 
 require (
-	github.com/advanced-go/core v0.0.0-20231231124242-c93e1c6aba48
-	github.com/advanced-go/example-domain v0.0.0-20231230191345-3ea2ff26e2df
+	github.com/advanced-go/core v0.0.0-20231231132700-ef3ae0c6d42f
+	github.com/advanced-go/example-domain v0.0.0-20231231145632-ccdd4d3cc1fb
 )
 
-require (
-	github.com/advanced-go/example-agent v0.0.0-20231227201911-d0b69e78df57 // indirect
-	github.com/advanced-go/messaging v0.0.0-20231227153933-11b8f486a9f4 // indirect
-	github.com/google/uuid v1.4.0 // indirect
-)
+require github.com/google/uuid v1.4.0 // indirect

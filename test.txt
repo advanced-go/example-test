@@ -1,0 +1,1 @@
+github.com/advanced-go/example-test/pkg

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/advanced-go/core/exchange"
 	"github.com/advanced-go/core/runtime"
-	"github.com/advanced-go/example-domain/slo"
+	slo "github.com/advanced-go/example-domain/slo/types"
 	"io"
 	"net/http"
 )
@@ -29,7 +29,7 @@ func main() {
 	//testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
-	testAgentAddSLO("104", "host", "99.9/801ms")
+	//testAgentAddSLO("104", "host", "99.9/801ms")
 	//testAgentAddSLO("105", "host", "99.9/901ms")
 	//testAgentAddSLO("106", "host", "99.9/1001ms")
 

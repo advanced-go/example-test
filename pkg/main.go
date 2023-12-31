@@ -2,14 +2,13 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"github.com/advanced-go/core/exchange"
-	"github.com/advanced-go/core/io2"
-	"github.com/advanced-go/core/json2"
+	"github.com/advanced-go/core/runtime"
 	"github.com/advanced-go/example-domain/slo"
 	"io"
 	"net/http"
-	"net/url"
 )
 
 const (
@@ -62,9 +61,9 @@ func testAgentAddSLO(id, controller, threshold string) bool {
 		StatusCodes: "0",
 	},
 	}
-	buf, status := json2.Marshal(entries)
-	if !status.OK() {
-		fmt.Printf("error: AddSLO() -> %v", status.FirstError())
+	buf, err := json.Marshal(entries)
+	if err != nil {
+		fmt.Printf("error: AddSLO() -> %v", err)
 		return false
 	}
 	r := bytes.NewReader(buf)
@@ -81,10 +80,10 @@ func testAgentAddSLO(id, controller, threshold string) bool {
 }
 
 func Put(file, uri, variant string) bool {
-	u, _ := url.Parse(file)
-	buf, err := io2.ReadFile(u)
-	if err != nil {
-		fmt.Printf("read file err: %v\n", err)
+	//u, _ := url.Parse(file)
+	buf, status := runtime.NewBytes(file) //io2.ReadFile(u)
+	if !status.OK() {
+		fmt.Printf("read file err: %v\n", status.Errors())
 		return false
 	}
 	reader := bytes.NewReader(buf)

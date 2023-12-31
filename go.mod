@@ -3,8 +3,8 @@ module github.com/advanced-go/example-test
 go 1.21.4
 
 require (
-	github.com/advanced-go/core v0.0.0-20231222200601-673d05ff557f
-	github.com/advanced-go/example-domain v0.0.0-20231227194558-6e3e9ce484d7
+	github.com/advanced-go/core v0.0.0-20231230171253-7a138ae54e06
+	github.com/advanced-go/example-domain v0.0.0-20231230191345-3ea2ff26e2df
 )
 
 require (

@@ -4,6 +4,8 @@ github.com/advanced-go/core v0.0.0-20231211223727-e918985bcfd7 h1:aHO/c8r/4PwZTT
 github.com/advanced-go/core v0.0.0-20231211223727-e918985bcfd7/go.mod h1:p58Ll2RUpEOeraoKxazyJpiPkWZelINYxxkcwCtwjUE=
 github.com/advanced-go/core v0.0.0-20231222200601-673d05ff557f h1:Frv5dJ8JRxTMA/h9OywZI1oXLhRuKE1NHadE5GUghcc=
 github.com/advanced-go/core v0.0.0-20231222200601-673d05ff557f/go.mod h1:p58Ll2RUpEOeraoKxazyJpiPkWZelINYxxkcwCtwjUE=
+github.com/advanced-go/core v0.0.0-20231230171253-7a138ae54e06 h1:RDQL1jwNNKJke+xe2mzSH9GZsf/SxGi/7XvhqZnxsoU=
+github.com/advanced-go/core v0.0.0-20231230171253-7a138ae54e06/go.mod h1:p58Ll2RUpEOeraoKxazyJpiPkWZelINYxxkcwCtwjUE=
 github.com/advanced-go/example-agent v0.0.0-20231227201911-d0b69e78df57 h1:FRE2Rc6sMsMMbSLHMsFVOW2Zm+J98IphB8KKThllBhM=
 github.com/advanced-go/example-agent v0.0.0-20231227201911-d0b69e78df57/go.mod h1:nW5kXL3hVYF2EWNZ1b4XhasJifHIjsXQKSqO9KUkU38=
 github.com/advanced-go/example-domain v0.0.0-20231204185622-9e68ea91625b h1:Cb5E3hZmW6OgCyG68DRDjEjZrSjDuDljibnzumB0TUI=
@@ -16,6 +18,8 @@ github.com/advanced-go/example-domain v0.0.0-20231225150543-da806775599b h1:O5x7
 github.com/advanced-go/example-domain v0.0.0-20231225150543-da806775599b/go.mod h1:4KmX94fT1KlVvL8DyQRQM4jc5U7CczD0gemO8EI8H7k=
 github.com/advanced-go/example-domain v0.0.0-20231227194558-6e3e9ce484d7 h1:ATcoNsuS3BZubViBFmtm7FoxwTCdSpZPCNLffLDht8Q=
 github.com/advanced-go/example-domain v0.0.0-20231227194558-6e3e9ce484d7/go.mod h1:xqG/j7noKmmWeH2xKD+XVDzyCl96TmHdTuTbD6IesUM=
+github.com/advanced-go/example-domain v0.0.0-20231230191345-3ea2ff26e2df h1:9tPTXQ8fr9VlsecevbkJiFhgWlW7Pg79FTRN1y6Z7wE=
+github.com/advanced-go/example-domain v0.0.0-20231230191345-3ea2ff26e2df/go.mod h1:N4E3fZpkHp8rJCcIL60eP3c56bff+ZWUtlB16h2FCJw=
 github.com/advanced-go/messaging v0.0.0-20231204182720-6e5a486bdb53 h1:p0ceWtKVHAy17U+Te6mL3O6d2ICvKCfQYqPPF5ZVidw=
 github.com/advanced-go/messaging v0.0.0-20231204182720-6e5a486bdb53/go.mod h1:NRPtNhLKjE6RkVJ6iz22tnxQ0qPXAj8qCVwOu1F4prk=
 github.com/advanced-go/messaging v0.0.0-20231220192105-86c5cce95dc0/go.mod h1:DonmYg8URk088g4ta+5bWRXT0x+h8RrVob+bnuvslFo=

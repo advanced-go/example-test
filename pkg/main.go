@@ -13,9 +13,9 @@ import (
 
 const (
 	ActivityUrl    = "http://localhost:8080/github/advanced-go/example-domain/service:activity/entry"
-	SloUrl         = "http://localhost:8080/github/advanced-go/example-domain/slo:entry"
-	Timeseries1Url = "http://localhost:8080/github/advanced-go/example-domain/timeseries:v1/entry"
-	Timeseries2Url = "http://localhost:8080/github/advanced-go/example-domain/timeseries:v2/entry"
+	SloUrl         = "http://localhost:8080/github/advanced-go/example-domain/service:slo/entry"
+	Timeseries1Url = "http://localhost:8080/github/advanced-go/example-domain/service:timeseries/v1/entry"
+	Timeseries2Url = "http://localhost:8080/github/advanced-go/example-domain/service:timeseries/v2/entry"
 
 	ActivityResource     = "file://[cwd]/pkg/resource/activity.json"
 	SloResource          = "file://[cwd]/pkg/resource/slo.json"

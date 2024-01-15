@@ -6,16 +6,16 @@ import (
 	"fmt"
 	"github.com/advanced-go/core/exchange"
 	"github.com/advanced-go/core/runtime"
-	slo "github.com/advanced-go/example-domain/slo/types"
+	slo "github.com/advanced-go/example-domain/slo"
 	"io"
 	"net/http"
 )
 
 const (
-	ActivityUrl    = "http://localhost:8080/github.com/advanced-go/example-domain/activity:entry"
-	SloUrl         = "http://localhost:8080/github.com/advanced-go/example-domain/slo:entry"
-	Timeseries1Url = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries:v1/entry"
-	Timeseries2Url = "http://localhost:8080/github.com/advanced-go/example-domain/timeseries:v2/entry"
+	ActivityUrl    = "http://localhost:8080/github/advanced-go/example-domain/activity:entry"
+	SloUrl         = "http://localhost:8080/github/advanced-go/example-domain/slo:entry"
+	Timeseries1Url = "http://localhost:8080/github/advanced-go/example-domain/timeseries:v1/entry"
+	Timeseries2Url = "http://localhost:8080/github/advanced-go/example-domain/timeseries:v2/entry"
 
 	ActivityResource     = "file://[cwd]/pkg/resource/activity.json"
 	SloResource          = "file://[cwd]/pkg/resource/slo.json"
@@ -54,7 +54,7 @@ func testAgentLoad() bool {
 }
 
 func testAgentAddSLO(id, controller, threshold string) bool {
-	entries := []slo.Entry{{
+	entries := []slo.EntryV1{{
 		Id:          id,
 		Controller:  controller,
 		Threshold:   threshold,

@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	ActivityUrl    = "http://localhost:8080/github/advanced-go/example-domain/activity:entry"
+	ActivityUrl    = "http://localhost:8080/github/advanced-go/example-domain/service:activity/entry"
 	SloUrl         = "http://localhost:8080/github/advanced-go/example-domain/slo:entry"
 	Timeseries1Url = "http://localhost:8080/github/advanced-go/example-domain/timeseries:v1/entry"
 	Timeseries2Url = "http://localhost:8080/github/advanced-go/example-domain/timeseries:v2/entry"
@@ -26,7 +26,7 @@ const (
 
 func main() {
 	//testInitialLoad()
-	//testAgentLoad()
+	testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
 	//testAgentAddSLO("104", "host", "99.9/801ms")

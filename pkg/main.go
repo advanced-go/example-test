@@ -9,6 +9,7 @@ import (
 	slo "github.com/advanced-go/example-domain/slo"
 	"io"
 	"net/http"
+	"os"
 )
 
 const (
@@ -25,8 +26,9 @@ const (
 )
 
 func main() {
+	testSearch()
 	//testInitialLoad()
-	testAgentLoad()
+	//testAgentLoad()
 
 	//testAgentAddSLO("103", "host", "99.9/701ms")
 	//testAgentAddSLO("104", "host", "99.9/801ms")
@@ -81,7 +83,7 @@ func testAgentAddSLO(id, controller, threshold string) bool {
 
 func Put(file, uri, variant string) bool {
 	//u, _ := url.Parse(file)
-	buf, status := runtime.NewBytes(file) //io2.ReadFile(u)
+	buf, status := runtime.ReadFile(file) //io2.ReadFile(u)
 	if !status.OK() {
 		fmt.Printf("read file err: %v\n", status.Errors())
 		return false
@@ -110,4 +112,27 @@ func Delete(uri, variant string) {
 	if resp != nil {
 		fmt.Printf("StatusCode: %v\n", resp.StatusCode)
 	}
+}
+
+func testSearch() {
+	uri := "http://localhost:8081/github/advanced-go/search/provider:search?q=golang"
+	//req, _ := http.NewRequest(http.MethodGet, "http://localhost:8081/github/advanced-go/search/provider:search?q=golang")
+
+	resp, status := exchange.Get(uri, nil)
+	if !status.OK() {
+		fmt.Printf("error on Get(): %v\n", status)
+		return
+	}
+
+	buf, status1 := runtime.ReadAll(resp.Body)
+	if !status1.OK() {
+		fmt.Printf("error on ReadAll(): %v\n", status1)
+		return
+	}
+	err := os.WriteFile("C:\\users\\markb\\github\\example-test\\pkg\\resource\\g-golang-1.html", buf, 066)
+	if err != nil {
+		fmt.Printf("error on WriteFile(): %v\n", err)
+		return
+	}
+
 }

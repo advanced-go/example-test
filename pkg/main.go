@@ -124,12 +124,12 @@ func testSearch() {
 		return
 	}
 
-	buf, status1 := runtime.ReadAll(resp.Body)
+	buf, status1 := runtime.ReadAll(resp.Body, nil)
 	if !status1.OK() {
 		fmt.Printf("error on ReadAll(): %v\n", status1)
 		return
 	}
-	err := os.WriteFile("C:\\users\\markb\\github\\example-test\\pkg\\resource\\g-golang-1.html", buf, 066)
+	err := os.WriteFile("C:\\users\\markb\\github\\example-test\\pkg\\resource\\g-golang-2.html", buf, 066)
 	if err != nil {
 		fmt.Printf("error on WriteFile(): %v\n", err)
 		return

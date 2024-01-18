@@ -119,7 +119,7 @@ func testSearch() {
 	//req, _ := http.NewRequest(http.MethodGet, "http://localhost:8081/github/advanced-go/search/provider:search?q=golang")
 
 	h := make(http.Header)
-	h.Add(runtime.AcceptEncoding, "gzip, deflate, br")
+	//h.Add(runtime.AcceptEncoding, "gzip, deflate, br")
 	resp, status := exchange.Get(uri, h)
 	if !status.OK() {
 		fmt.Printf("error on Get(): %v\n", status)

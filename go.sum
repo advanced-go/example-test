@@ -10,5 +10,7 @@ github.com/advanced-go/example-domain v0.0.0-20240116215137-349edd8e4a87 h1:y18U
 github.com/advanced-go/example-domain v0.0.0-20240116215137-349edd8e4a87/go.mod h1:iyOJqMk4pZ+8s+Sqk0beaI4gB6eE2n264O1k+OBrU48=
 github.com/advanced-go/example-domain v0.0.0-20240117204318-26a6c891cfc0 h1:EfXhOziB/cYAKw9V9FooLcYr4woJwCwbRt85niatdL4=
 github.com/advanced-go/example-domain v0.0.0-20240117204318-26a6c891cfc0/go.mod h1:kWY9AgOUXfj3+AJ/KWDBYKxElS4FPp7QBjAsCvsla5o=
+github.com/advanced-go/example-domain v0.0.0-20240118013831-70b4ede4022b h1:nywWTAAxnEmzYFkejZ5u4sXfCgjqq4vEuK1bImqfn6s=
+github.com/advanced-go/example-domain v0.0.0-20240118013831-70b4ede4022b/go.mod h1:t7WARk3FUnxN5m69/AdjvthopuV2Y3s8j8/9O8XlQ8Q=
 github.com/google/uuid v1.4.0 h1:MtMxsa51/r9yyhkyLsVeVt0B+BGQZzpQiTQ4eHZ8bc4=
 github.com/google/uuid v1.4.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=

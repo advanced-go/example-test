@@ -119,7 +119,7 @@ func testSearch() {
 	//req, _ := http.NewRequest(http.MethodGet, "http://localhost:8081/github/advanced-go/search/provider:search?q=golang")
 
 	h := make(http.Header)
-	h.Add(runtime.AcceptEncoding, "gzip, deflate, br")
+	//h.Add(runtime.AcceptEncoding, "gzip, deflate, br")
 	resp, status := exchange.Get(uri, h)
 	if !status.OK() {
 		fmt.Printf("error on Get(): %v\n", status)
@@ -131,7 +131,7 @@ func testSearch() {
 		fmt.Printf("error on ReadAll(): %v\n", status1)
 		return
 	}
-	err := os.WriteFile("C:\\users\\markb\\github\\example-test\\pkg\\resource\\g-golang-3.html", buf, 066)
+	err := os.WriteFile("C:\\users\\markb\\github\\example-test\\pkg\\resource\\g-golang-4.html", buf, 066)
 	if err != nil {
 		fmt.Printf("error on WriteFile(): %v\n", err)
 		return

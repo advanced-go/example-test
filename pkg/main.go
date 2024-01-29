@@ -85,7 +85,7 @@ func Put(file, uri, variant string) bool {
 	//u, _ := url.Parse(file)
 	buf, status := runtime.ReadFile(file) //io2.ReadFile(u)
 	if !status.OK() {
-		fmt.Printf("read file err: %v\n", status.Errors())
+		fmt.Printf("read file err: %v\n", status.ErrorList())
 		return false
 	}
 	reader := bytes.NewReader(buf)

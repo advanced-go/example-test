@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/advanced-go/core/exchange"
-	"github.com/advanced-go/core/runtime"
+	"github.com/advanced-go/core/io2"
 	slo "github.com/advanced-go/example-domain/slo"
 	"io"
 	"net/http"
@@ -83,9 +83,9 @@ func testAgentAddSLO(id, controller, threshold string) bool {
 
 func Put(file, uri, variant string) bool {
 	//u, _ := url.Parse(file)
-	buf, status := runtime.ReadFile(file) //io2.ReadFile(u)
+	buf, status := io2.ReadFile(file) //io2.ReadFile(u)
 	if !status.OK() {
-		fmt.Printf("read file err: %v\n", status.ErrorList())
+		fmt.Printf("read file err: %v\n", status.Error())
 		return false
 	}
 	reader := bytes.NewReader(buf)
@@ -126,7 +126,7 @@ func testSearch() {
 		return
 	}
 
-	buf, status1 := runtime.ReadAll(resp.Body, nil)
+	buf, status1 := io2.ReadAll(resp.Body, nil)
 	if !status1.OK() {
 		fmt.Printf("error on ReadAll(): %v\n", status1)
 		return

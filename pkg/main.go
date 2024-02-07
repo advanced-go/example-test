@@ -120,7 +120,7 @@ func testSearch() {
 
 	h := make(http.Header)
 	//h.Add(runtime.AcceptEncoding, "gzip, deflate, br")
-	resp, status := exchange.Get(uri, h)
+	resp, status := exchange.Get(nil, uri, h)
 	if !status.OK() {
 		fmt.Printf("error on Get(): %v\n", status)
 		return
